@@ -122,9 +122,13 @@ if ! command_exists brew; then
     }
     
     # Add Homebrew to PATH based on architecture
-    if [[ ! -f "$HOME/.zprofile" ]] || ! grep -q "brew shellenv" "$HOME/.zprofile"; then
-        print_message "Setting up Homebrew PATH in .zprofile"
-        echo "eval \"\$(${HOMEBREW_SHELLENV})\"" >> "$HOME/.zprofile"
+    if [[ ! -f "$HOME/.zshrc" ]] || ! grep -q "brew shellenv" "$HOME/.zshrc"; then
+        print_message "Setting up Homebrew PATH in .zshrc"
+        if [[ "${ARCH}" == "arm64" ]]; then
+            echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.zshrc"
+        else
+            echo 'eval "$(/usr/local/bin/brew shellenv)"' >> "$HOME/.zshrc"
+        fi
     fi
     eval "$($HOMEBREW_SHELLENV)"
 else
