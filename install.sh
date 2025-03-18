@@ -122,25 +122,17 @@ if ! command_exists brew; then
     }
     
     # Add Homebrew to PATH based on architecture
-    if [[ "${ARCH}" == "arm64" ]]; then
-        print_message "Setting up Homebrew PATH for Apple Silicon"
-        if [[ ! -f "$HOME/.zprofile" ]] || ! grep -q "brew shellenv" "$HOME/.zprofile"; then
-            echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> "$HOME/.zprofile"
-        fi
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-    else
-        print_message "Setting up Homebrew PATH for Intel"
-        if [[ ! -f "$HOME/.zprofile" ]] || ! grep -q "brew shellenv" "$HOME/.zprofile"; then
-            echo 'eval "$(/usr/local/bin/brew shellenv)"' >> "$HOME/.zprofile"
-        fi
-        eval "$(/usr/local/bin/brew shellenv)"
+    if [[ ! -f "$HOME/.zprofile" ]] || ! grep -q "brew shellenv" "$HOME/.zprofile"; then
+        print_message "Setting up Homebrew PATH in .zprofile"
+        echo "eval \"\$(${HOMEBREW_SHELLENV})\"" >> "$HOME/.zprofile"
     fi
+    eval "$($HOMEBREW_SHELLENV)"
 else
     print_message "Homebrew already installed"
 fi
 
 # Ensure Homebrew is in PATH for the rest of the script
-eval "$(${HOMEBREW_SHELLENV})"
+eval "$($HOMEBREW_SHELLENV)"
 
 # Install GNU stow if not already installed
 if ! command_exists stow; then
