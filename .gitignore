@@ -4,9 +4,6 @@ npm-debug.log
 # Mac
 .DS_Store
 
-# Windows
-Thumbs.db
-
 # WebStorm
 .idea/
 
@@ -16,3 +13,6 @@ Thumbs.db
 # General
 log/
 *.log
+
+tmux/plugins/
+raycast

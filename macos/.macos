@@ -97,7 +97,7 @@ launchctl asuser "$USER_ID" sudo -u "$CURRENT_USER" defaults write com.apple.doc
 ###################
 
 # Beep feedback when changing volume
-sudo -u "$CURRENT_USER" defaults write NSGlobalDomain com.apple.sound.beep.feedback -integer 1
+# sudo -u "$CURRENT_USER" defaults write NSGlobalDomain com.apple.sound.beep.feedback -integer 1
 
 # Beep feedback when plugging in the power adapter
 sudo -u "$CURRENT_USER" defaults write com.apple.PowerChime ChimeOnAllHardware -bool true
@@ -154,19 +154,19 @@ defaults write /private/var/db/timed/Library/Preferences/com.apple.timed.plist T
 # /usr/sbin/systemsetup -settimezone America/New_York
 
 # Safari : show bookmarks bar and status bar
-launchctl asuser "$USER_ID" sudo -u "$CURRENT_USER" defaults write com.apple.Safari ShowFavoritesBar-v2 -bool true
-launchctl asuser "$USER_ID" sudo -u "$CURRENT_USER" defaults write com.apple.Safari ShowOverlayStatusBar -bool true
+# launchctl asuser "$USER_ID" sudo -u "$CURRENT_USER" defaults write com.apple.Safari ShowFavoritesBar-v2 -bool true
+# launchctl asuser "$USER_ID" sudo -u "$CURRENT_USER" defaults write com.apple.Safari ShowOverlayStatusBar -bool true
 
 # Google Chrome : Force relaunch (in milliseconds) when there is a pending update + Home button
-launchctl asuser "$USER_ID" sudo -u "$CURRENT_USER" defaults write com.google.Chrome RelaunchNotificationPeriod -int 21600000
-launchctl asuser "$USER_ID" sudo -u "$CURRENT_USER" defaults write com.google.Chrome RelaunchNotification -int 2
-launchctl asuser "$USER_ID" sudo -u "$CURRENT_USER" defaults write com.google.Chrome ShowHomeButton -bool true
+# launchctl asuser "$USER_ID" sudo -u "$CURRENT_USER" defaults write com.google.Chrome RelaunchNotificationPeriod -int 21600000
+# launchctl asuser "$USER_ID" sudo -u "$CURRENT_USER" defaults write com.google.Chrome RelaunchNotification -int 2
+# launchctl asuser "$USER_ID" sudo -u "$CURRENT_USER" defaults write com.google.Chrome ShowHomeButton -bool true
 
 # Remove Wi-Fi SSID from known networks. Ex: forget the Wi-Fi dedicated to Mac enrollments
-for interface in $(networksetup -listnetworkserviceorder | grep Hardware | awk '/Wi-Fi/ { print $NF }' | awk -F ")" '{ print $1 }'); do
-  echo "Disconnecting $interface from non-internal device network"
-  networksetup -removepreferredwirelessnetwork "$interface" "NAME_OF_SSID"
-done
+# for interface in $(networksetup -listnetworkserviceorder | grep Hardware | awk '/Wi-Fi/ { print $NF }' | awk -F ")" '{ print $1 }'); do
+# echo "Disconnecting $interface from non-internal device network"
+#  networksetup -removepreferredwirelessnetwork "$interface" "NAME_OF_SSID"
+# done
 
 # Activity Monitor : Show Data in graph instead of IO and packets
 sudo -u "$CURRENT_USER" defaults write com.apple.ActivityMonitor DiskGraphType -int 1
@@ -220,46 +220,46 @@ defaults write "/Users/$CURRENT_USER/Library/Group Containers/group.com.apple.re
 ################
 
 # Show language menu in the top right corner of the boot screen
-defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+# defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 # Show IP when clicking on clock (Deprecated)
 # defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Disable password hints
-defaults write com.apple.loginwindow RetriesUntilHint -int 0
+# defaults write com.apple.loginwindow RetriesUntilHint -int 0
 
 ##############################
 # UNLOCKS FOR NON-ADMIN USER #
 ##############################
 
 # Unlock System Preferences for non admins
-security authorizationdb write system.preferences allow
-security authorizationdb write system.settings allow
+# security authorizationdb write system.preferences allow
+# security authorizationdb write system.settings allow
 
 # Unlock Date and Time
-security authorizationdb write system.preferences.datetime allow
-security authorizationdb write system.settings.datetime allow
+# security authorizationdb write system.preferences.datetime allow
+# security authorizationdb write system.settings.datetime allow
 
 # Unlock Energy Saver preference pane
-security authorizationdb write system.preferences.energysaver allow
-security authorizationdb write system.settings.energysaver allow
+# security authorizationdb write system.preferences.energysaver allow
+# security authorizationdb write system.settings.energysaver allow
 
 # Unlock Network preference pane
-security authorizationdb write system.preferences.network allow
-security authorizationdb write system.settings.network allow
-security authorizationdb write system.services.systemconfiguration.network allow
-/usr/libexec/airportd prefs RequireAdminNetworkChange=NO RequireAdminIBSS=NO
+# security authorizationdb write system.preferences.network allow
+# security authorizationdb write system.settings.network allow
+# security authorizationdb write system.services.systemconfiguration.network allow
+# /usr/libexec/airportd prefs RequireAdminNetworkChange=NO RequireAdminIBSS=NO
 
 # Unlock Time Machine preference pane
-security authorizationdb write system.preferences.timemachine allow
-security authorizationdb write system.settings.timemachine allow
+# security authorizationdb write system.preferences.timemachine allow
+# security authorizationdb write system.settings.timemachine allow
 
 # Unlock Print & Scan Preference pane
-security authorizationdb write system.preferences.printing allow
-security authorizationdb write system.settings.printing allow
+# security authorizationdb write system.preferences.printing allow
+# security authorizationdb write system.settings.printing allow
 
 # Give Everyone Print Operator Access
-dseditgroup -o edit -n /Local/Default -a everyone -t group lpadmin
+# dseditgroup -o edit -n /Local/Default -a everyone -t group lpadmin
 
 ####################
 # RESTART SERVICES #

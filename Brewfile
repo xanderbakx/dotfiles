@@ -1,5 +1,4 @@
 # Taps
-tap "homebrew/bundle"
 tap "jesseduffield/lazygit"
 
 # Formulae
@@ -25,7 +24,7 @@ cask "ghostty"
 cask "raycast"
 cask "vlc"
 cask "discord"
-cask "docker"
+cask "docker-desktop"
 cask "firefox"
 cask "github"
 cask "google-chrome"

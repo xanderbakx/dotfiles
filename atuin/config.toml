@@ -1,0 +1,8 @@
+style = "compact"
+enter_accept = true
+
+[dotfiles]
+enabled = true
+
+[sync]
+records = true

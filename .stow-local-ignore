@@ -1,28 +1,9 @@
-# Comments and blank lines are allowed.
-
-RCS
-.+,v
-
-CVS
-\.\#.+       # CVS conflict files / emacs lock files
-\.cvsignore
-
-\.svn
-_darcs
-\.hg
-
 \.git
 \.gitignore
-\.gitmodules
-
-.+~          # emacs backup files
-\#.*\#       # emacs autosave files
-
-^/README.*
-^/LICENSE.*
-^/COPYING
-
-# Additional
-
-Makefile
-.DS_Store
+^/README\.md$
+^/raycast$
+^/install\.sh$
+^/Brewfile$
+^/Brewfile\.work$
+^/macos$
+^/\.stow-local-ignore$

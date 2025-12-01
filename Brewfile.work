@@ -1,5 +1,4 @@
 # Taps
-tap "homebrew/bundle"
 tap "jesseduffield/lazygit"
 
 # Formulae
@@ -23,7 +22,7 @@ brew "wget"       # File downloader
 # Casks
 cask "ghostty"
 cask "raycast"
-cask "docker"
+cask "docker-desktop"
 cask "firefox"
 cask "google-chrome"
 cask "visual-studio-code"
