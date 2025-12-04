@@ -9,6 +9,12 @@ brew "tmux"
 brew "zoxide"
 brew "jesseduffield/lazygit/lazygit"
 
+# Shell Tools
+brew "eza"        # Better ls
+brew "bat"        # Better cat
+brew "starship"   # Prompt
+brew "carapace"   # Multi-shell completions
+
 # Development Tools
 brew "git"
 brew "gh"         # GitHub CLI
@@ -26,6 +32,10 @@ cask "docker-desktop"
 cask "firefox"
 cask "google-chrome"
 cask "visual-studio-code"
+
+# Fonts
+cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
 
 # VSCode
 vscode "aaron-bond.better-comments"

@@ -13,6 +13,9 @@ npm-debug.log
 # General
 log/
 *.log
+*.backup
 
 tmux/plugins/
 raycast
+
+.zcompdump
