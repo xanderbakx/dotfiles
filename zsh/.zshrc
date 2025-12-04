@@ -189,7 +189,11 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $real
 # PLUGINS
 # ============================================================================
 
-# Load plugins with turbo mode
+# Load OMZ git lib (defines git_current_branch function) and plugin (aliases)
+zinit snippet OMZL::git.zsh
+zinit snippet OMZP::git
+
+# Load other plugins with turbo mode
 zinit wait lucid light-mode for \
   atinit"zicdreplay" \
       zdharma-continuum/fast-syntax-highlighting \
@@ -198,7 +202,6 @@ zinit wait lucid light-mode for \
   blockf atpull'zinit creinstall -q .' \
       zsh-users/zsh-completions \
       Aloxaf/fzf-tab \
-      OMZP::git \
       OMZP::sudo \
       OMZP::command-not-found
 
