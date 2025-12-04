@@ -189,10 +189,10 @@ install_tmux_plugins() {
     success "TPM already installed"
   fi
   
-  # Install tmux plugins
+  # Install tmux plugins (set TMUX_PLUGIN_MANAGER_PATH for non-tmux environment)
   if [[ -f "$tpm_path/bin/install_plugins" ]]; then
     info "Installing tmux plugins..."
-    "$tpm_path/bin/install_plugins"
+    TMUX_PLUGIN_MANAGER_PATH="$HOME/.config/tmux/plugins" "$tpm_path/bin/install_plugins"
     success "Tmux plugins installed"
   fi
 }
