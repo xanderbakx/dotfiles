@@ -170,8 +170,15 @@ stow_dotfiles() {
   # Packages that go to ~/.config (uses default target from .stowrc)
   stow --restow aerospace atuin ghostty nvim sketchybar starship tmux
   
-  # Packages that go to ~/ (override default target)
-  stow --restow -t ~ --ignore='.zcompdump' zsh zshenv
+  # zshenv goes to ~/ (sets ZDOTDIR to ~/.config/zsh)
+  stow --restow -t ~ zshenv
+  
+  # zsh config: symlink to ~/.config/zsh for ZDOTDIR
+  # (ZDOTDIR is set in .zshenv to look for configs in ~/.config/zsh)
+  if [[ -L "$HOME/.config/zsh" ]]; then
+    rm "$HOME/.config/zsh"
+  fi
+  ln -sf "$DOTFILES_DIR/zsh" "$HOME/.config/zsh"
   
   success "Dotfiles stowed"
 }
