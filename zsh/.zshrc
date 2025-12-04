@@ -205,3 +205,8 @@ zinit wait lucid light-mode for \
       OMZP::sudo \
       OMZP::command-not-found
 
+# ============================================================================
+# LOCAL CONFIG (machine-specific, not in git)
+# ============================================================================
+# Source ~/.zshrc.local if it exists (for work-specific config, etc.)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
