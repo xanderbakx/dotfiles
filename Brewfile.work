@@ -1,5 +1,6 @@
 # Taps
 tap "jesseduffield/lazygit"
+tap "nikitabobko/tap"
 
 # Formulae
 brew "fzf"
@@ -32,6 +33,7 @@ cask "docker-desktop"
 cask "firefox"
 cask "google-chrome"
 cask "visual-studio-code"
+cask "aerospace"          # Tiling window manager
 
 # Fonts
 cask "font-hack-nerd-font"
