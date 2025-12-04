@@ -87,6 +87,26 @@ install_homebrew() {
   else
     success "Homebrew already installed"
   fi
+  
+  # Fix permissions on Intel Macs (common issue with /usr/local)
+  if [[ "$(uname -m)" != "arm64" ]]; then
+    local brew_dirs=("/usr/local/bin" "/usr/local/share" "/usr/local/lib" "/usr/local/etc")
+    local needs_fix=false
+    
+    for dir in "${brew_dirs[@]}"; do
+      if [[ -d "$dir" && ! -w "$dir" ]]; then
+        needs_fix=true
+        break
+      fi
+    done
+    
+    if $needs_fix; then
+      warn "Fixing Homebrew directory permissions (requires sudo)..."
+      sudo chown -R "$(whoami)" /usr/local/bin /usr/local/share /usr/local/lib /usr/local/etc 2>/dev/null
+      chmod u+w /usr/local/bin /usr/local/share /usr/local/lib /usr/local/etc 2>/dev/null
+      success "Permissions fixed"
+    fi
+  fi
 }
 
 install_brew_packages() {
