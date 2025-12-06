@@ -3,10 +3,13 @@ font-family = "JetBrainsMono Nerd Font Mono", "SFNS"
 font-size = 14
 background-opacity = 0.8
 background-blur-radius = 20
+window-padding-x = 10
+window-padding-y = 10
 mouse-hide-while-typing = true
-window-decoration = false
 initial-window = true
 macos-option-as-alt = true
+macos-titlebar-style = hidden
+quick-terminal-size = 50%,25%
 quick-terminal-animation-duration = 0
 quick-terminal-autohide = false
 

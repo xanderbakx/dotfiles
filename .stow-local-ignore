@@ -7,3 +7,4 @@
 ^/Brewfile\.work$
 ^/macos$
 ^/\.stow-local-ignore$
+\.backup$
