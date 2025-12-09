@@ -55,6 +55,9 @@ update_brewfile() {
   # Dump current state
   brew bundle dump --file="$file" --force --describe
   
+  # Remove VS Code extensions (managed separately)
+  sed -i '' '/^vscode/d' "$file"
+  
   success "Updated $target with current Homebrew packages"
   echo ""
   echo "Review changes with: git diff $target"

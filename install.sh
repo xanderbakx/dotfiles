@@ -126,15 +126,16 @@ install_brew_packages() {
 backup_existing() {
   local backup_dir="$HOME/.dotfiles_backup/$(date +%Y%m%d_%H%M%S)"
   local files_to_backup=(
-    "$HOME/.zshrc"
     "$HOME/.zshenv"
-    "$HOME/.config/nvim"
-    "$HOME/.config/tmux"
-    "$HOME/.config/ghostty"
     "$HOME/.config/aerospace"
     "$HOME/.config/atuin"
+    "$HOME/.config/ghostty"
+    "$HOME/.config/nvim"
+    "$HOME/.config/sheldon"
     "$HOME/.config/sketchybar"
     "$HOME/.config/starship"
+    "$HOME/.config/tmux"
+    "$HOME/.config/zsh"
   )
   
   local needs_backup=false
@@ -167,18 +168,12 @@ stow_dotfiles() {
   # Create ~/.config if it doesn't exist
   mkdir -p "$HOME/.config"
   
-  # Packages that go to ~/.config (uses default target from .stowrc)
-  stow --restow aerospace atuin ghostty nvim sketchybar starship tmux
+  # Stow all config directories to ~/.config (uses .stowrc target)
+  # .stow-local-ignore excludes non-config files/dirs
+  stow --restow .
   
   # zshenv goes to ~/ (sets ZDOTDIR to ~/.config/zsh)
   stow --restow -t ~ zshenv
-  
-  # zsh config: symlink to ~/.config/zsh for ZDOTDIR
-  # (ZDOTDIR is set in .zshenv to look for configs in ~/.config/zsh)
-  if [[ -L "$HOME/.config/zsh" ]]; then
-    rm "$HOME/.config/zsh"
-  fi
-  ln -sf "$DOTFILES_DIR/zsh" "$HOME/.config/zsh"
   
   success "Dotfiles stowed"
 }
@@ -204,18 +199,6 @@ install_tmux_plugins() {
   fi
 }
 
-install_zinit() {
-  local zinit_path="$HOME/.local/share/zinit/zinit.git"
-  if [[ ! -d "$zinit_path" ]]; then
-    info "Installing Zinit..."
-    mkdir -p "$(dirname "$zinit_path")"
-    git clone https://github.com/zdharma-continuum/zinit "$zinit_path"
-    success "Zinit installed"
-  else
-    success "Zinit already installed"
-  fi
-}
-
 install_atuin() {
   if [[ ! -d "$HOME/.atuin" ]]; then
     info "Installing Atuin..."
@@ -235,7 +218,7 @@ main() {
   echo ""
   echo -e "${BLUE}╔════════════════════════════════════════╗${NC}"
   echo -e "${BLUE}║       Dotfiles Installation            ║${NC}"
-  echo -e "${BLUE}║       Profile: ${PROFILE}                      ║${NC}"
+  printf "${BLUE}║       Profile: %-24s║${NC}\n" "$PROFILE"
   echo -e "${BLUE}╚════════════════════════════════════════╝${NC}"
   echo ""
   
@@ -245,7 +228,6 @@ main() {
   backup_existing
   stow_dotfiles
   install_tmux_plugins
-  install_zinit
   install_atuin
   
   echo ""

@@ -21,9 +21,8 @@ usage() {
   echo ""
   echo "Commands:"
   echo "  brewfile          Install packages from Brewfile"
-  echo ""
-  echo "Note: Raycast import is disabled due to a bug in Raycast's import feature."
-  echo "      Use update-configs.sh to export settings for backup purposes."
+  echo "  raycast           Import Raycast config"
+  echo "  all               Apply all configs"
   echo ""
   exit 0
 }
@@ -54,15 +53,39 @@ apply_brewfile() {
   success "Packages installed from $target"
 }
 
-# NOTE: Raycast import is disabled due to a bug in Raycast v1.103+
-# where importing a .rayconfig file always fails with "wrong format" error,
-# even when exporting and importing on the same machine/version.
-# The export in update-configs.sh still works for backup purposes.
+apply_raycast() {
+  local rayconfig="$DOTFILES_DIR/raycast/Raycast.rayconfig"
+  
+  if [[ ! -f "$rayconfig" ]]; then
+    error "Raycast.rayconfig not found"
+  fi
+  
+  if ! [[ -d "/Applications/Raycast.app" ]]; then
+    error "Raycast is not installed"
+  fi
+  
+  info "Opening Raycast config for import..."
+  open "$rayconfig"
+  
+  echo ""
+  echo "Raycast will prompt you to import settings."
+  echo "Enter your Raycast password when prompted."
+  echo ""
+  
+  success "Opened Raycast.rayconfig"
+}
 
 main() {
   case "${1:-}" in
     brewfile)
       apply_brewfile
+      ;;
+    raycast)
+      apply_raycast
+      ;;
+    all)
+      apply_brewfile
+      apply_raycast
       ;;
     --help|-h|"")
       usage

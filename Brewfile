@@ -10,6 +10,8 @@ brew "carapace"
 brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Fast and simple Node.js version manager
+brew "fnm"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool
@@ -30,6 +32,8 @@ brew "neovim"
 brew "ripgrep"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+# Fast, configurable, shell plugin manager
+brew "sheldon"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
@@ -62,6 +66,7 @@ cask "docker-desktop"
 cask "firefox"
 # Screen colour temperature controller
 cask "flux-app"
+cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 cask "font-sf-pro"
 cask "font-sketchybar-app-font"
@@ -93,5 +98,3 @@ cask "spotify"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
-
-# VSCode extensions managed via Settings Sync (not Brewfile)
