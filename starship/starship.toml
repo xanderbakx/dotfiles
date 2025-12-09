@@ -21,6 +21,20 @@ truncate_to_repo = true
 min_time = 2_000
 format = '[$duration]($style) '
 
+[nodejs]
+detect_files = ["package.json"]
+detect_folders = ["node_modules"]
+detect_extensions = []
+
+[pijul_channel]
+disabled = true
+
+[hg_branch]
+disabled = true
+
+[fossil_branch]
+disabled = true
+
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
