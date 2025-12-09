@@ -5,25 +5,30 @@
 add_newline = true
 
 # minimal left prompt
-format = """$directory$character"""
+# format = """
+# $directory\
+# $git_branch\
+# $character\
+# """
+
 palette = "catppuccin_mocha"
 # move the rest of the prompt to the right
-right_format = """$all"""
+# right_format = """$all"""
 command_timeout = 1000
 
+[character]
+success_symbol = '[➜](bold green)'
+error_symbol = '[➜](bold red)'
 
 [directory]
 truncation_length = 3
 truncate_to_repo = true
-style = 'blue'
+# style = 'blue'
 
 [cmd_duration]
 min_time = 2_000
 format = '[$duration]($style) '
-style = 'yellow'
-
-[git_branch]
-style = 'mauve'
+# style = 'yellow'
 
 [git_status]
 ahead = '⇡${count}'

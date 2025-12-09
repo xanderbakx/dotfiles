@@ -1,22 +1,30 @@
-# Node
-npm-debug.log
-
-# Mac
+### macOS ###
 .DS_Store
 
-# WebStorm
+### Editors ###
+# WebStorm / JetBrains
 .idea/
 
-# vi
+# Vim / Neovim
 *~
 
-# General
+### Node.js ###
+npm-debug.log
+
+### Logs & Backups ###
 log/
 *.log
 *.backup
 
+### Tmux ###
 tmux/plugins/
-raycast
 
+### Zsh ###
 .zcompdump
+.zcompcache
 .zsh_history
+.zsh_sessions
+.zsh_sessions_history
+
+### App Configs ###
+raycast/
