@@ -50,8 +50,6 @@ brew "wget"
 brew "zoxide"
 # A window border system for macOS
 brew "felixkratz/formulae/borders"
-# Custom macOS statusbar with shell plugin, interaction and graph support
-brew "felixkratz/formulae/sketchybar"
 # Supabase CLI
 brew "supabase/tap/supabase"
 # AeroSpace is an i3-like tiling window manager for macOS
@@ -69,7 +67,6 @@ cask "flux-app"
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 cask "font-sf-pro"
-cask "font-sketchybar-app-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Desktop client for GitHub repositories

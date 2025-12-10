@@ -132,7 +132,6 @@ backup_existing() {
     "$HOME/.config/ghostty"
     "$HOME/.config/nvim"
     "$HOME/.config/sheldon"
-    "$HOME/.config/sketchybar"
     "$HOME/.config/starship"
     "$HOME/.config/tmux"
     "$HOME/.config/zsh"

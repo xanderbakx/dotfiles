@@ -10,7 +10,6 @@ after-login-command = []
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-  'exec-and-forget sketchybar',
   'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
 ]
 
@@ -46,19 +45,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
 automatically-unhide-macos-hidden-apps = true 
 
-
-#ADDED STUFF
-#
-#
-#
-#
-#
-# Notify Sketchybar about workspace change and update icons
-exec-on-workspace-change = [
-  '/bin/bash',
-  '-c',
-  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE && ~/.config/sketchybar/plugins/update_workspace_icons.sh'
-]
+exec-on-workspace-change = []
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -121,7 +108,6 @@ alt-o = 'exec-and-forget open -a /Applications/OBS.app/'
 alt-w = 'exec-and-forget open -a /Applications/Obsidian.app'
 alt-n = 'exec-and-forget open -a /Applications/Notion.app'
 alt-a = 'exec-and-forget open -a /Applications/ChatGPT.app'
-alt-shift-r = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-e = 'layout tiles horizontal vertical'
