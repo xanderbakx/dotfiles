@@ -26,3 +26,4 @@ if [ "$COMBINED" != "$(cat "$AEROSPACE_CONFIG" 2>/dev/null)" ]; then
 else
     echo "Config already up to date"
 fi
+

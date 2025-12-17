@@ -1,4 +1,5 @@
 # Window rules for ultrawide monitor (CF791)
+default-root-container-layout = 'tiles'
 # Workspace 1: Ghostty
 # Workspace 2: VSCode + Zen (tiled)
 # Workspace 3: Insomnia + DataGrip (tiled)
@@ -34,17 +35,4 @@ run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
-run = ['layout floating', 'move-node-to-workspace 4']
-
-# Floating windows
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.QuickTimePlayerX'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.systempreferences'
-run = 'layout floating'
+run = 'move-node-to-workspace 4'

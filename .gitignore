@@ -30,3 +30,7 @@ tmux/plugins/
 raycast/
 
 karabiner/automatic_backups/
+
+### AeroSpace ###
+# Generated config (base + laptop/ultrawide combined by aerospace-switch.sh)
+aerospace/aerospace.toml

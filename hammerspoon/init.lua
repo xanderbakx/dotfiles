@@ -22,3 +22,4 @@ hs.hotkey.bind({"cmd", "ctrl", "alt"}, "R", function()
 end)
 
 hs.notify.new({title="Hammerspoon", informativeText="Config loaded"}):send()
+
