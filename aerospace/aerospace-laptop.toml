@@ -1,5 +1,4 @@
 # Window rules for laptop (no external monitor)
-default-root-container-layout = 'accordion'
 # Workspace 1: Ghostty
 # Workspace 2: VSCode
 # Workspace 3: Zen
