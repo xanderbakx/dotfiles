@@ -84,10 +84,10 @@ cask "ghostty"
 cask "github"
 # Web browser
 cask "google-chrome"
+# Tool for powerful automation of macOS
+cask "hammerspoon"
 # Utility to hide menu bar items
 cask "hiddenbar"
-# Keyboard customiser
-cask "karabiner-elements"
 # HTTP and GraphQL Client
 cask "insomnia"
 # Open-source, self-hosted Slack-alternative

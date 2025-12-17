@@ -1,0 +1,105 @@
+# AeroSpace base configuration (shared across all setups)
+# Monitor-specific window rules are appended by aerospace-switch.sh
+
+after-login-command = []
+
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+]
+
+start-at-login = true 
+
+# Normalizations
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+automatically-unhide-macos-hidden-apps = true 
+
+[key-mapping]
+preset = 'qwerty'
+
+[gaps]
+inner.horizontal = 10
+inner.vertical = 10
+outer.bottom = 10
+outer.top = 10
+outer.right = 10
+outer.left = 10
+
+[mode.main.binding]
+
+# App shortcuts (Hyper key = ⌘⌃⌥)
+cmd-ctrl-alt-z = 'exec-and-forget open -a /Applications/Zen.app'
+cmd-ctrl-alt-c = 'exec-and-forget open -a /Applications/Cursor.app'
+cmd-ctrl-alt-g = 'exec-and-forget open -a /Applications/Ghostty.app'
+cmd-ctrl-alt-d = 'exec-and-forget open -a /Applications/DataGrip.app'
+cmd-ctrl-alt-v = 'exec-and-forget open -a /Applications/Visual\ Studio\ Code.app'
+cmd-ctrl-alt-i = 'exec-and-forget open -a /Applications/Insomnia.app'
+cmd-ctrl-alt-m = 'exec-and-forget open -a /Applications/Mattermost.app'
+cmd-ctrl-alt-o = 'exec-and-forget open -a /Applications/Microsoft\ Outlook.app'
+cmd-ctrl-alt-s = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app'
+cmd-ctrl-alt-comma = 'exec-and-forget open -a /Applications/System\ Settings.app'
+
+# Layout
+cmd-ctrl-alt-backslash = 'layout tiles horizontal vertical'
+cmd-ctrl-alt-minus = 'layout accordion horizontal vertical'
+cmd-ctrl-alt-f = 'fullscreen'
+cmd-ctrl-alt-y = ['focus right', 'join-with down', 'layout tiles horizontal']
+
+# Focus
+cmd-ctrl-alt-h = 'focus left'
+cmd-ctrl-alt-j = 'focus down'
+cmd-ctrl-alt-k = 'focus up'
+cmd-ctrl-alt-l = 'focus right'
+
+# Move
+cmd-ctrl-alt-shift-h = 'move left'
+cmd-ctrl-alt-shift-j = 'move down'
+cmd-ctrl-alt-shift-k = 'move up'
+cmd-ctrl-alt-shift-l = 'move right'
+
+# Resize
+cmd-ctrl-alt-shift-minus = 'resize smart -50'
+cmd-ctrl-alt-shift-equal = 'resize smart +50'
+
+# Workspaces
+cmd-ctrl-alt-1 = 'workspace 1' 
+cmd-ctrl-alt-2 = 'workspace 2' 
+cmd-ctrl-alt-3 = 'workspace 3'
+cmd-ctrl-alt-4 = 'workspace 4'
+cmd-ctrl-alt-5 = 'workspace 5'
+cmd-ctrl-alt-6 = 'workspace 6'
+cmd-ctrl-alt-7 = 'workspace 7'
+
+# Move to workspace
+cmd-ctrl-alt-shift-1 = 'move-node-to-workspace 1' 
+cmd-ctrl-alt-shift-2 = 'move-node-to-workspace 2' 
+cmd-ctrl-alt-shift-3 = 'move-node-to-workspace 3'
+cmd-ctrl-alt-shift-4 = 'move-node-to-workspace 4'
+cmd-ctrl-alt-shift-5 = 'move-node-to-workspace 5'
+cmd-ctrl-alt-shift-6 = 'move-node-to-workspace 6'
+cmd-ctrl-alt-shift-7 = 'move-node-to-workspace 7'
+
+cmd-ctrl-alt-shift-right = 'workspace next --wrap-around'
+cmd-ctrl-alt-shift-left = 'workspace prev --wrap-around'
+
+cmd-ctrl-alt-tab = 'workspace-back-and-forth'
+cmd-ctrl-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+cmd-ctrl-alt-shift-semicolon = 'mode service'
+
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main']
+f = ['layout floating tiling', 'mode main']
+backspace = ['close-all-windows-but-current', 'mode main']
+
+cmd-ctrl-alt-shift-h = ['join-with left', 'mode main']
+cmd-ctrl-alt-shift-j = ['join-with down', 'mode main']
+cmd-ctrl-alt-shift-k = ['join-with up', 'mode main']
+cmd-ctrl-alt-shift-l = ['join-with right', 'mode main']

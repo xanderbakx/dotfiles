@@ -73,8 +73,8 @@ cask "ghostty"
 cask "github"
 # Web browser
 cask "google-chrome"
-# Keyboard customiser
-cask "karabiner-elements"
+# Tool for powerful automation of macOS
+cask "hammerspoon"
 # Utility to hide menu bar items
 cask "hiddenbar"
 # File archiver

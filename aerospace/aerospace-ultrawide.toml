@@ -1,0 +1,50 @@
+# Window rules for ultrawide monitor (CF791)
+# Workspace 1: Ghostty
+# Workspace 2: VSCode + Zen (tiled)
+# Workspace 3: Insomnia + DataGrip (tiled)
+# Workspace 4: Outlook + Mattermost (tiled) + Teams (floating)
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.zen-browser.zen'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.insomnia.app'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.datagrip'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'Mattermost.Desktop'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = ['layout floating', 'move-node-to-workspace 4']
+
+# Floating windows
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.QuickTimePlayerX'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
