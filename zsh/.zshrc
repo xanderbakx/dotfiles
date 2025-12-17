@@ -68,17 +68,6 @@ autoload -Uz compinit
 compinit
 
 # ============================================================================
-# CARAPACE
-# ============================================================================
-export CARAPACE_BRIDGES='zsh,bash' # optional
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-source <(carapace _carapace)
-
-# Disable carapace for commands that work better with native file completion
-compdef -d nvim
-compdef -d vim
-
-# ============================================================================
 # FZF-TAB
 # ============================================================================
 # disable sort when completing `git checkout`

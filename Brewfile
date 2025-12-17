@@ -4,8 +4,6 @@ tap "nikitabobko/tap"
 tap "supabase/tap"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Multi-shell multi-command argument completer
-brew "carapace"
 # Modern, maintained replacement for ls
 brew "eza"
 # Simple, fast and user-friendly alternative to find
