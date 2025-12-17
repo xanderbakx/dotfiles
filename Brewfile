@@ -73,6 +73,8 @@ cask "ghostty"
 cask "github"
 # Web browser
 cask "google-chrome"
+# Keyboard customiser
+cask "karabiner-elements"
 # Utility to hide menu bar items
 cask "hiddenbar"
 # File archiver

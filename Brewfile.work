@@ -86,6 +86,8 @@ cask "github"
 cask "google-chrome"
 # Utility to hide menu bar items
 cask "hiddenbar"
+# Keyboard customiser
+cask "karabiner-elements"
 # HTTP and GraphQL Client
 cask "insomnia"
 # Open-source, self-hosted Slack-alternative

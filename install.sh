@@ -130,6 +130,7 @@ backup_existing() {
     "$HOME/.config/aerospace"
     "$HOME/.config/atuin"
     "$HOME/.config/ghostty"
+    "$HOME/.config/karabiner"
     "$HOME/.config/nvim"
     "$HOME/.config/sheldon"
     "$HOME/.config/starship"
