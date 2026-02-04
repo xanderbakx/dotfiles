@@ -1,5 +1,6 @@
-# AeroSpace base configuration (shared across all setups)
-# Monitor-specific window rules are appended by aerospace-switch.sh
+# AeroSpace configuration (shared across devices)
+# `aerospace-switch.sh` only toggles `default-root-container-layout`
+# via the `LAYOUT_PLACEHOLDER` below.
 
 after-login-command = []
 
@@ -144,3 +145,41 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.microsoft.teams2'
 run = 'layout floating'
+
+# Workspace assignments (shared across devices/monitors)
+# Workspace 1: Ghostty
+# Workspace 2: VSCode + Zen
+# Workspace 3: Insomnia + DataGrip
+# Workspace 4: Outlook + Mattermost + Teams
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.insomnia.app'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.datagrip'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'Mattermost.Desktop'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = 'move-node-to-workspace 4'
